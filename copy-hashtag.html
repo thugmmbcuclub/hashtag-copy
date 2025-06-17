@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <title>複製曼巴暴徒Hashtags</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #0f0f0f;
+      color: #ffffff;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    .container {
+      text-align: center;
+      padding: 30px;
+      background: #1a1a1a;
+      border-radius: 16px;
+      box-shadow: 0 0 12px rgba(0, 0, 0, 0.4);
+      max-width: 90%;
+    }
+
+    h1 {
+      font-size: 1.5em;
+      margin-bottom: 20px;
+      color: #facc15;
+    }
+
+    .btn-copy {
+      background-color: #facc15;
+      color: #000;
+      padding: 14px 24px;
+      border: none;
+      border-radius: 12px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      font-weight: bold;
+    }
+
+    .btn-copy:hover {
+      background-color: #eab308;
+    }
+
+    .copied-message {
+      margin-top: 20px;
+      color: #4ade80;
+      display: none;
+    }
+
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 1.2em;
+      }
+
+      .btn-copy {
+        font-size: 14px;
+        padding: 12px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h1>🚀 點一下，複製曼巴暴徒 Hashtags！</h1>
+  <button class="btn-copy" onclick="copyText()">📋 複製 Hashtags</button>
+  <p class="copied-message" id="copied">✅ 已成功複製！</p>
+</div>
+
+<script>
+  function copyText() {
+    const hashtags = `#MMBCU #TCNMMBCUCLUB #MMBCU中彰投專版 #THUGMMBCUCLUB #MMBCU158 #曼巴 #曼巴精神 #曼巴暴徒 #MMBCUONTHEROAD #マンバ騎士団`;
+    navigator.clipboard.writeText(hashtags).then(function() {
+      const msg = document.getElementById('copied');
+      msg.style.display = 'block';
+      setTimeout(() => msg.style.display = 'none', 2000);
+    }, function(err) {
+      alert("複製失敗：" + err);
+    });
+  }
+</script>
+
+</body>
+</html>
